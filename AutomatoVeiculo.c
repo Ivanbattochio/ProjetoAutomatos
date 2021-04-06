@@ -23,12 +23,15 @@ int main()
         PARADOCOLISAO,
         PARADOSINALIZADO
     } state;
-
+    char palavras[100];
+    int i = 0;
     state = ESTACIONADO;
     while (!registradorPalavra)
     {
         scanf("%c", &entrada);
         fflush(stdin);
+        palavras[i] = entrada;
+        i++;
         switch (state)
         {
 
@@ -285,5 +288,7 @@ int main()
     {
         printf("Palavra Rejeitada!\n");
     }
+    palavras[i] = '\0';
+    printf("Palavra: %s\n", palavras);
     return 0;
 }
